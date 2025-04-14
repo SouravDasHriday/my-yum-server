@@ -27,34 +27,43 @@ Automated setup for local YUM repositories using RHEL/CentOS installation media.
 curl -LO https://raw.githubusercontent.com/SouravDasHriday/my-yum-server/main/scripts/setup.sh
 chmod +x setup.sh
 sudo ./setup.sh
+```
 
 ### Method 2: Clone Repository
+```bash
 git clone https://github.com/SouravDasHriday/my-yum-server.git
 cd my-yum-server
 sudo ./scripts/setup.sh
+```
+
 🌟 Usage
 ## Basic Setup
+```bash
 sudo ./setup.sh
+```
+
 ## With HTTP Sharing
+```bash
 sudo ENABLE_HTTP=true ./setup.sh
+```
 
 ## Verify Repository
+```bash
 sudo dnf --disablerepo='*' --enablerepo='local-*' list available
+```
 
 🖥️ Deployment on New Machines
 1. Transfer Installation Media
 
 Mount your RHEL/CentOS ISO at default location:
-bash
-Copy
-
+```bash
 sudo mount /path/to/iso /run/media/root/RHEL-8-10-0-BaseOS-x86_64
+```
 
 2. Remote Execution (via SSH)
-bash
-Copy
-
+```bash
 ssh root@new-machine "git clone https://github.com/SouravDasHriday/my-yum-server.git && cd my-yum-server && sudo ./scripts/setup.sh"
+```
 
 🛠️ Customization
 
@@ -100,11 +109,3 @@ MIT © Sourav Das
 5. **Troubleshooting Section** - Quick solutions to common issues
 6. **Clean Formatting** - Using consistent markdown styling
 7. **License Info** - Important for open-source projects
-
-### How to Implement:
-1. Save this as `README.md` in your repository root
-2. Commit and push:
-   ```bash
-   git add README.md
-   git commit -m "Add professional README"
-   git push origin main
